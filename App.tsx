@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Animated, Image, StyleSheet, View } from 'react-native';
 import BootSplash from 'react-native-bootsplash';
+import { Navigation } from './src/navigation';
 
 type Props = {
   onAnimationEnd: () => void;
@@ -40,8 +41,7 @@ const App = () => {
 
   return (
     <View style={styles.flex1}>
-      {/* content */}
-
+      <Navigation />
       {visible && (
         <AnimatedBootSplash
           onAnimationEnd={() => {
