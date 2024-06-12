@@ -1,4 +1,5 @@
 import colors from '@/constants/Colors';
+import Dimensions from '@/constants/Dimensions';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -12,7 +13,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   textContainer: {
-    marginTop: 16,
+    position: 'absolute',
+    bottom: Dimensions.height / 6,
   },
 });
 
