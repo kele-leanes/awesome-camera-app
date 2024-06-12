@@ -9,7 +9,7 @@ import * as RNFS from 'react-native-fs';
 import { RootStackParamList } from '@/navigation/Stacks';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { DIRECTORY_PATH } from '@/utils/file';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type CameraScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -23,6 +23,7 @@ function CameraScreen() {
   const appState = useAppState();
   const camera = useRef<Camera>(null);
   const [image, setImage] = useState<PhotoFile | null>(null);
+  const inset = useSafeAreaInsets();
 
   const isActive = isFocused && appState === 'active';
 
@@ -68,17 +69,21 @@ function CameraScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       {image?.path ? (
         <>
-          <TouchableOpacity style={styles.cancelButton} onPress={onCancelPhoto}>
+          <TouchableOpacity
+            style={[styles.cancelButton, { top: inset.top }]}
+            onPress={onCancelPhoto}>
             <Text style={styles.cancelText}>Cancel</Text>
           </TouchableOpacity>
           <Image
             source={{ uri: `file://${image?.path}` }}
             style={styles.container}
           />
-          <TouchableOpacity style={styles.saveButton} onPress={onSavePhoto}>
+          <TouchableOpacity
+            style={[styles.saveButton, { bottom: inset.bottom }]}
+            onPress={onSavePhoto}>
             <Image
               source={require('@/assets/images/save.png')}
               style={styles.saveImage}
@@ -99,7 +104,7 @@ function CameraScreen() {
           <CaptureButton onPress={onTakePhoto} />
         </>
       )}
-    </SafeAreaView>
+    </View>
   );
 }
 

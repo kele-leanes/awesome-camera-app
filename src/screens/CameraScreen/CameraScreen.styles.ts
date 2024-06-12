@@ -17,18 +17,16 @@ const styles = StyleSheet.create({
   cancelButton: {
     position: 'absolute',
     zIndex: 1,
-    top: 20,
     left: 20,
   },
   saveButton: {
     position: 'absolute',
     zIndex: 1,
-    bottom: 20,
     left: 20,
   },
   cancelText: {
     color: colors.text,
-    fontSize: 16,
+    fontSize: 20,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
