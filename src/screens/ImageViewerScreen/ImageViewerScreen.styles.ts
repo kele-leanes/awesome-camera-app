@@ -16,6 +16,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: Dimensions.height / 6,
   },
+  shareButton: {
+    tintColor: colors.text,
+    width: 24,
+    height: 24,
+  },
 });
 
 export default styles;
