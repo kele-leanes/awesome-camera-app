@@ -17,7 +17,7 @@ import { getFiles, makeDir } from '@/utils/file';
 import RNFS from 'react-native-fs';
 import { getLocationFromImageData } from '@/utils/location';
 
-const numColumns = 3;
+export const numColumns = 3;
 
 function HomeScreen() {
   const navigation = useNavigation<HomeScreenNavigationProp>();

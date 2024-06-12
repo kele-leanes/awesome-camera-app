@@ -3,10 +3,12 @@ import { Image, Pressable, View } from 'react-native';
 import Placeholder from '@/assets/images/placeholder.png';
 import Dimensions from '@/constants/Dimensions';
 import styles from './ThumbnailItem.styles';
-import { HomeScreenNavigationProp, Thumbnail } from '../../HomeScreen.types';
+import {
+  HomeScreenNavigationProp,
+  Thumbnail,
+  numColumns,
+} from '@/screens/HomeScreen';
 import { useNavigation } from '@react-navigation/native';
-
-const numColumns = 3;
 
 const IMAGE_SIZE = Dimensions.width / numColumns;
 
