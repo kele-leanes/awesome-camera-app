@@ -22,8 +22,8 @@ function Navigation() {
     if (locationPermission !== 'granted') {
       await Camera.requestLocationPermission();
     }
-    if (locationPermission !== 'granted') {
-      await Camera.requestLocationPermission();
+    if (cameraPermission !== 'granted') {
+      await Camera.requestCameraPermission();
     }
     console.log(`Camera permission status: ${cameraPermission}`);
     console.log(`Location permission status: ${locationPermission}`);
