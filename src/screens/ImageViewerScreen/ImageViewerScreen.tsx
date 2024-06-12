@@ -38,6 +38,7 @@ function ImageViewerScreen() {
   const handleShare = useCallback(async () => {
     await Share.open({
       url: params.imageUrl,
+      failOnCancel: false,
     });
   }, [params.imageUrl]);
 
